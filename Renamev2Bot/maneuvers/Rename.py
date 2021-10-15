@@ -98,7 +98,7 @@ class RenameManeuver(DefaultManeuver):
                 file_name=dl_path,
                 progress=progress_for_pyrogram, 
                 progress_args=(
-                    "Downloading the file",
+                    "**📥 Downloading...**",
                     progress,
                     time.time(),
                     get_var("SLEEP_SECS"),
@@ -147,7 +147,7 @@ class RenameManeuver(DefaultManeuver):
         
         renamelog.info(thumb_path)
         renamelog.info(f"is force = {is_force}")
-        await progress.edit_text("Downloading Done Now renaming.", reply_markup=None)        
+        await progress.edit_text("**✅ Downloaded Successfully**.", reply_markup=None)        
 
         try:
             ndl_path = os.path.join(os.path.dirname(dl_path), new_file_name)
@@ -188,7 +188,7 @@ class RenameManeuver(DefaultManeuver):
                     caption=new_file_name,
                     progress=progress_for_pyrogram,
                     progress_args=(
-                        f"**Uploading the file...**\n {new_file_name}",
+                        f"**Uploading the file...**\n{new_file_name}",
                         progress,
                         time.time(),
                         get_var("SLEEP_SECS"),
@@ -231,7 +231,7 @@ class RenameManeuver(DefaultManeuver):
                     caption=new_file_name,
                     progress=progress_for_pyrogram,
                     progress_args=(
-                        f"**Uploading the file...**\n {new_file_name}",
+                        f"**Uploading the file...**\n{new_file_name}",
                         progress,
                         time.time(),
                         get_var("SLEEP_SECS"),
@@ -240,7 +240,7 @@ class RenameManeuver(DefaultManeuver):
                         markup
                     )
                 )
-            
+
             else:
                 rmsg = await self._client.send_document(
                     self._cmd_message.chat.id,
@@ -250,7 +250,7 @@ class RenameManeuver(DefaultManeuver):
                     force_document=is_force,
                     progress=progress_for_pyrogram,
                     progress_args=(
-                        f"**Uploading the file...**\n {new_file_name}",
+                        f"**Uploading the file...**\n{new_file_name}",
                         progress,
                         time.time(),
                         get_var("SLEEP_SECS"),
@@ -260,14 +260,14 @@ class RenameManeuver(DefaultManeuver):
                     )
                 )
             if rmsg is None:
-                await progress.edit_text("**Upload Cancled by the user.**")
-#            else:
-#                await progress.edit_text("Rename process Done.")
+                await progress.edit_text("**Upload Cancled by user.**")
+            else:
+                await progress.edit_text("**File Renamed.**")
             
             await asyncio.sleep(2) 
         except:
-            renamelog.exception("**Errored while uplading the file.**")
-            await progress.edit_text("**Rename process errored.**")
+            renamelog.exception("**Error while uplading the file.**")
+            await progress.delete()
             return
 
         rem_this(thumb_path)
@@ -280,4 +280,4 @@ def rem_this(path):
         os.remove(path)
     except:
         print(path)
-        renamelog.exception("**Errored while removeing the file.**")
+        renamelog.exception("**Errored while removing the file.**")
