@@ -35,17 +35,21 @@
             "required": false
         },
         "IS_MONGO": {
-            "description": "Is the database URL provided MONGO DB.",
+            "description": "Put your mongo database link.",
             "required": false
         },
         "IS_PRIVATE": {
-            "description": "Is this bot for private use? true/false",
+            "description": "Is this bot for private use? True/False",
             "value": "True",
+            "required": false
+        },
+        "AUTH_USERS": {
+            "description": "Enter user id they will be able to use the bot.",
             "required": false
         },
         "OWNER_ID": {
             "description": "ID of the owner.",
-            "required": false
+            "required": true
         },
         "FORCEJOIN": {
             "description": "Enter the user name(with @) or invite link of the chat that the use should join. Keep blank to disable.",
@@ -57,7 +61,8 @@
         },
         "TRACE_CHANNEL": {
             "description": "ID of the channel to which the track of the uses is sent who are using the bot. Put 0 for no tracking.",
-            "required": false
+            "value": "0"
+            "required": true
         }
     },
 
