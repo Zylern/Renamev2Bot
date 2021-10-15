@@ -278,8 +278,8 @@ class RenameManeuver(DefaultManeuver):
 
 def rem_this(path):
     try:
-#        os.system("/app/Renamev2Bot/downloads/*")
-        os.remove(path)
+        os.system("/app/Renamev2Bot/downloads/*")
+#        os.remove(path)
     except:
         print(path)
         renamelog.exception("Error while removing the file.")
