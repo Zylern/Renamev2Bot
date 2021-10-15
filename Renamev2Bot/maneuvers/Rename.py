@@ -147,7 +147,7 @@ class RenameManeuver(DefaultManeuver):
         
         renamelog.info(thumb_path)
         renamelog.info(f"is force = {is_force}")
-        await progress.edit_text("**✅ Downloaded Successfully**.", reply_markup=None)        
+        await progress.edit_text("**✅ Downloaded Successfully**", reply_markup=None)        
 
         try:
             ndl_path = os.path.join(os.path.dirname(dl_path), new_file_name)
@@ -282,4 +282,4 @@ def rem_this(path):
         os.remove(path)
     except:
         print(path)
-        renamelog.exception("Errored while removing the file.")
+        renamelog.exception("Error while removing the file.")
