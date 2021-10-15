@@ -262,11 +262,12 @@ class RenameManeuver(DefaultManeuver):
             if rmsg is None:
                 await progress.edit_text("**Upload Cancled by user.**")
             else:
-                await progress.edit_text("**File Renamed.**")
+                #await progress.edit_text("**File Renamed.**")
+                await progress.delete()
             
             await asyncio.sleep(2) 
         except:
-            renamelog.exception("**Error while uplading the file.**")
+            renamelog.exception("Error while uplading the file.")
             await progress.delete()
             return
 
@@ -277,7 +278,8 @@ class RenameManeuver(DefaultManeuver):
 
 def rem_this(path):
     try:
+#        os.system("/app/Renamev2Bot/downloads/*")
         os.remove(path)
     except:
         print(path)
-        renamelog.exception("**Errored while removing the file.**")
+        renamelog.exception("Errored while removing the file.")
