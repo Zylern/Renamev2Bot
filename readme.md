@@ -57,9 +57,9 @@ update the config.py file inside the Renamev2Bot to change the config and comman
 
 `/setthumb` - Reply to image to set the thumbnail permanently.
 
-`/getthumb` - Get the thumbnail which is currently set.
+`/showthumb` - Get the thumbnail which is currently set.
 
-`/clrthumb` - Remove the thumbnail which is set.
+`/delthumb` - Remove the thumbnail which is set.
 
 `/mode` - Change between 3 modes:-
 - Same format as it was sent. [If doc is sent doc is uploaded if video is sent video is uploaded.]
