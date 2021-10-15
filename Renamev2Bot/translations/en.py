@@ -57,8 +57,8 @@ from the file name.__
 /rename - **Reply to media to rename `/rename filename.extension`. If only `/rename` is used filters will be used.**
 /filters - **Add/Remove Filters. Use this command to see what are these.**
 /setthumb - **Reply to image to set the thumbnail permanently.**
-/getthumb - **Get the thumbnail which is currently set.**
-/clrthumb - **Remove the thumbnail which is set.**
+/showthumb - **Get the thumbnail which is currently set.**
+/delthumb - **Remove the thumbnail which is set.**
 /mode - **Change between 3 modes:**
     __Same format as it was sent. [If doc is sent doc is uploaded if video is sent video is uploaded.]__
     __Force to Document. [Everything is uploaded as a file.]__
