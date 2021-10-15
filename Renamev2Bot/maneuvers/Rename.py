@@ -188,7 +188,7 @@ class RenameManeuver(DefaultManeuver):
                     caption=new_file_name,
                     progress=progress_for_pyrogram,
                     progress_args=(
-                        f"**Uploading the file...**\n{new_file_name}",
+                        f"**📤 Uploading...**\n",
                         progress,
                         time.time(),
                         get_var("SLEEP_SECS"),
@@ -231,7 +231,7 @@ class RenameManeuver(DefaultManeuver):
                     caption=new_file_name,
                     progress=progress_for_pyrogram,
                     progress_args=(
-                        f"**Uploading the file...**\n{new_file_name}",
+                        f"**📤 Uploading...**\n",
                         progress,
                         time.time(),
                         get_var("SLEEP_SECS"),
@@ -250,7 +250,7 @@ class RenameManeuver(DefaultManeuver):
                     force_document=is_force,
                     progress=progress_for_pyrogram,
                     progress_args=(
-                        f"**Uploading the file...**\n{new_file_name}",
+                        f"**📤 Uploading...**\n",
                         progress,
                         time.time(),
                         get_var("SLEEP_SECS"),
