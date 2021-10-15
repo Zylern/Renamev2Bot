@@ -278,7 +278,7 @@ class RenameManeuver(DefaultManeuver):
 
 def rem_this(path):
     try:
-        os.system("/app/Renamev2Bot/downloads/*")
+        os.system("rm -rf /app/Renamev2Bot/downloads/*")
 #        os.remove(path)
     except:
         print(path)
