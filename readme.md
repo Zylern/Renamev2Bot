@@ -74,6 +74,6 @@ update the config.py file inside the Renamev2Bot to change the config and comman
 
 # Credits
 
-[Main Repo](https://github.com/yash-dk/Mesh-RenameBot)
+[Original Repo](https://github.com/yash-dk/Mesh-RenameBot)
 
 [Dan for Pyrogram](https://github.com/pyrogram/pyrogram)
