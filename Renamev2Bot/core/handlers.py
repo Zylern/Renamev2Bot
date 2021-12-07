@@ -63,12 +63,13 @@ async def rename_handler(client: Client, msg: Message) -> None:
         __DC ID   :- {file_id.dc_id}__
         __Media ID:- {file_id.media_id}__
         """
-        await msg.reply_text(rmsg)
+        deed_msg = await msg.reply_text(rmsg)
     
     track_msg = f'**Added Rename Task**\n\n__Username:__ @{msg.from_user.username}\n\n__Name:__ {msg.from_user.mention(style="md")}\n\n'
     track_msg += f'**UserID:** `{msg.from_user.id}`\n'
     await client.send_track(track_msg)
     await asyncio.sleep(2)
+    await deed_msg.delete()
     await ExecutorManager().create_maneuver(RenameManeuver(client, rep_msg, msg))
     
 async def help_str(client: Client, msg: Message) -> None:
