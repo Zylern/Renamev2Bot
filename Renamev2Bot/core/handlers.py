@@ -70,6 +70,7 @@ async def rename_handler(client: Client, msg: Message) -> None:
     await client.send_track(track_msg)
     await asyncio.sleep(2)
     await deed_msg.delete()
+    await rep_msg.delete()
     await ExecutorManager().create_maneuver(RenameManeuver(client, rep_msg, msg))
     
 async def help_str(client: Client, msg: Message) -> None:
