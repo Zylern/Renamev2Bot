@@ -77,7 +77,7 @@ class RenameManeuver(DefaultManeuver):
                     await self._cmd_message.reply_text(Trans.RENAME_NO_FILTER_MATCH)
                     return
 
-                await self._cmd_message.reply_text(Trans.RENAME_FILTER_MATCH_USED + f"\nFile name:- {new_file_name}")
+                huehuehue = await self._cmd_message.reply_text(Trans.RENAME_FILTER_MATCH_USED + f"\nFile name:- {new_file_name}")
             else:
                 await self._cmd_message.reply_text(Trans.RENAME_NOFLTR_NONAME)
                 return
@@ -264,6 +264,7 @@ class RenameManeuver(DefaultManeuver):
             else:
                 #await progress.edit_text("**File Renamed.**")
                 await progress.delete()
+                await huehuehue.delete()
             
             await asyncio.sleep(2) 
         except:
